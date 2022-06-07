@@ -11,20 +11,12 @@ pool:
   name: Default
 
 steps:
-- task: Npm@1
-  inputs:
-    command: 'install'
-    workingDir: ''
-    displayName: 'NPM Install'
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'dist-tag ls mypackage'
 - task: Npm@1  
   displayName: Build  
   inputs:  
     command: custom  
-    verbose: false  
+    verbose: false 
+    workingDir: '.'  
     customCommand: 'run build'  
   
 - task: CopyPublishBuildArtifacts@1  

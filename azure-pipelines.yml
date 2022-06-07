@@ -11,10 +11,13 @@ pool:
   name: Default
 
 steps:
+- task: UseNode@1
+  inputs:
+    version: '16.15.1'
 - task: Npm@1  
   displayName: Build  
   inputs:  
-    command: custom  
+    command: Build  
     verbose: false 
     workingDir: '.'  
     customCommand: 'run build'  

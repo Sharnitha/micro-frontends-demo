@@ -16,14 +16,15 @@ steps:
     command: 'install'
     workingDir: ''
     displayName: 'NPM Install'
-
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'dist-tag ls mypackage'
 - task: CopyPublishBuildArtifacts@1
   inputs:
-    ArtifactName: 'angularproject'
+    CopyRoot: 'dist'
+    Contents: '**'
+    ArtifactName: 'dist'
     ArtifactType: 'Container'
 - task: PublishBuildArtifacts@1
   inputs:

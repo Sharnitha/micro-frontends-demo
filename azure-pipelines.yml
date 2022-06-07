@@ -1,4 +1,5 @@
 # Node.js with Angular
+
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -12,12 +13,13 @@ pool:
 steps:
 - task: Npm@1
   inputs:
-   command: install
-  displayName: "npm install"
+    command: 'install'
+    workingDir: 'app-one/package.json'
 
 - task: Npm@1
   inputs:
-    command: custom
-    customCommand: "run build"
-  displayName: "Build Angular app"
+    command: 'build'
+    workingDir: 'app-one/package.json'
+
+
 

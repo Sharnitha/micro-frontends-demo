@@ -19,9 +19,8 @@ steps:
 
 - task: Npm@1
   inputs:
-    command: 'publish'
-    publishRegistry: 'useFeed'
-    publishFeed: '96998320-9d5c-4b5d-9c63-52616fcd6582'
+    command: 'custom'
+    customCommand: 'dist-tag ls mypackage'
 - task: CopyPublishBuildArtifacts@1
   inputs:
     ArtifactName: 'angularproject'

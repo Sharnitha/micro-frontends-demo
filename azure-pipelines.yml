@@ -15,11 +15,22 @@ steps:
   inputs:
     command: 'install'
     workingDir: ''
+    displayName: 'NPM Install'
 
 - task: Npm@1
   inputs:
-    command: 'build'
+    command: 'publish'
     workingDir: ''
+    displayName: 'NPM build and publish'
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    ArtifactName: 'angularproject'
+    ArtifactType: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
 
 

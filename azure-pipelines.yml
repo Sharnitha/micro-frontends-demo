@@ -8,10 +8,10 @@ trigger:
 
 pool:
   name: Default
-
 steps:
-
-- script: |
-    ng build --prod
-  displayName: 'build successfully'
+- task: Npm@1
+  inputs:
+    command: custom
+    customCommand: "run build"
+  displayName: "Build Angular app"
 

@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  name: Windowsagent
+  name: Default
 
 steps:
 

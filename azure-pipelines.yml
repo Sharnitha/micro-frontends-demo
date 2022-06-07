@@ -14,12 +14,12 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-    workingDir: 'app-one/package.json'
+    workingDir: ''
 
 - task: Npm@1
   inputs:
     command: 'build'
-    workingDir: 'app-one/package.json'
+    workingDir: ''
 
 
 

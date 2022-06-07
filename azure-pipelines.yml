@@ -8,7 +8,13 @@ trigger:
 
 pool:
   name: Default
+
 steps:
+- task: Npm@1
+  inputs:
+   command: install
+  displayName: "npm install"
+
 - task: Npm@1
   inputs:
     command: custom
